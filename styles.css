@@ -1,0 +1,258 @@
+p*{
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+}
+body {background-color: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgb(20, 20, 20) 0%, rgba(0,0,0,1) 50%, rgb(20, 20, 20) 100%);
+}
+
+h1{
+    font-family: "Abel", Fantasy;
+    color: rgb(180, 180, 180);
+    text-transform: uppercase ;
+    text-align: center;
+    z-index: 0;
+    margin-top: -48px;
+    letter-spacing: 10px;
+    line-height: 0.70rem;
+    outline: none;
+    font-size: 60px;
+    margin-left:auto;
+    margin-right:auto;
+}
+header a{
+    font-family: "Bebas Neue", Fantasy;
+    color:rgb(134, 134, 134);
+    text-decoration: none;
+    padding: 0 0.5rem;
+    top: 2250px;
+    z-index: 3;
+}
+header li{
+    list-style: none;
+}
+nav{
+    float: right;
+    font-size: 25px;
+}
+header li{
+    font-family: "Bebas Neue", Fantasy;
+    display: inline;
+    margin-top: 10px;
+    margin-right: 100px;
+    list-style: none;
+    
+}
+h2{
+    font-family: "Bebas Neue", Fantasy;
+    color: rgb(180, 180, 180);
+    padding:1px;
+    text-align: center;
+    z-index: 0;
+    font-size: 300px;
+
+}
+h2{
+    font-family: "Abel", Fantasy;
+    color: rgb(180, 180, 180);
+    padding:100px;
+    text-transform: uppercase ;
+    text-align: center;
+    z-index: 0;
+    letter-spacing: 10px;
+    line-height: 4rem;
+    outline: none;
+    font-size: 60px;
+    margin-left:auto;
+    margin-right:auto;
+}
+p{
+    font-family: "Abel Regular", sans-serif;
+    color: rgb(54, 54, 54);
+    font-size: 30px;
+}
+#ucc{
+    height: 60px;
+    width: 60px;
+    margin-top: 0px;
+    
+}
+#upp{
+    position: fixed;
+    left: 95%;
+    top: 90%;
+}
+.cuadrado{
+    margin-top:40px;
+    width: 1920px; 
+    top: -70px;
+    left: -10px;
+    height:  1080px; 
+    background-color:rgba(0, 0, 0, 0.42);  
+    position: absolute;
+    z-index: -1;
+        
+}
+.videoback{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: -30px;
+    z-index: -2;
+}
+.izq button{   
+    color: rgb(180, 180, 180);  
+    font-size: 250px;
+    top: 357px;
+    left: 150px;
+    font-family: "Bebas Neue", Fantasy;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    position: absolute;  
+        
+} 
+
+.frente:hover span {display:none}
+.frente:hover:before {content:"JUGAR"}
+
+.dificultad button{
+    color: rgb(180, 180, 180);  
+    font-size: 30px;
+    top: 157px;
+    font-family: "Bebas Neue", Fantasy;
+    background-color: #131313;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden; 
+    border: rgb(27, 195, 247);
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    box-shadow: 0px 0px 20px 0px rgb(27, 195, 247);
+    margin: 20px;
+    margin-left: 30%;
+           
+}
+
+.der button{   
+    color: rgb(180, 180, 180);  
+    font-size: 250px;
+    top: 357px;
+    left: 1570px;
+    font-family: "Bebas Neue", Fantasy;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    position: absolute; 
+          
+}
+.ini h2{
+    margin-top: 1080px;
+}
+.TEXTOSECON P{
+    margin-top: 400px;
+    margin-bottom: 400px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+.diff P{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+.frente{
+    color: rgb(180, 180, 180);
+    font-size: 300px;
+    z-index: 1;
+    top: 307px;
+    position: absolute;
+    left: 560px;
+    font-family: "Bebas Neue", Fantasy;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    position: absolute; 
+}
+.letrasblank{
+    color: white;
+    text-align: left;
+    padding: 500px 0px;
+    margin-left: 220px;
+    margin-top: 70px;
+}
+.imgdowns{
+    z-index: 1;
+    position: absolute;
+    margin-right: 10%;
+    top: 168px;
+    left: 443px;
+}
+.imgup{
+    z-index:2;
+    position: absolute;
+    top: 164px;
+    left: 706px;
+    margin-right: 10%;
+}
+.imgupd{
+    z-index: 2;
+    position: absolute;
+    top: 548px;
+    left: 819px;
+    margin-right: 10%;
+}
+.copy-box 
+{
+  position: relative;
+  font-family: "Abel Regular", sans-serif;
+  display: inline-block;
+  margin: 0 auto;
+  width: 70%;
+  background-color: #111111;
+  color: #747474;
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 20px;
+  left: 15%;
+  box-shadow: 0px 0px 20px 0px rgb(27, 195, 247);
+}
+.copy-box .line
+{
+  position: absolute;
+  background-color: aqua;
+  box-shadow: 0px 0px 12px aqua;
+  width: 4px;
+  height: calc(100% - 20px);
+  top: 10px;
+  left: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.copy-box .inner 
+{
+  padding: 30px;
+}
+footer{
+
+    bottom: 0;
+    background: transparent;
+    height: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    padding: 20px;
+}
