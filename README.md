@@ -1,7 +1,7 @@
 # proyecto2021
 
 
-Pagina web [Snake](https://ucc-labcompu2.github.io/proyecto2021-angelone-apfelbaum-garcia/)
+Pagina web [Snake](https://ucc-labcompu2.github.io/proyecto2021-angelone-apfelbaum-garcia/index.HTML)
 
 ### Requisitos del Primer Parcial
 - [ ] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
