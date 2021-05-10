@@ -117,8 +117,8 @@ p{
         
 } 
 
-.frente:hover span {display:none}
-.frente:hover:before {content:"JUGAR"}
+.frente:hover a {display:none}
+.frente:hover:before{content:"JUGAR"}
 
 .dificultad button{
     color: rgb(180, 180, 180);  
