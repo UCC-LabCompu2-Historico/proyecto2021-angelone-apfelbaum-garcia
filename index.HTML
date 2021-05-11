@@ -4,8 +4,10 @@
     <meta name="Autores" content="Benjamin Angelone, Ana Paula Apfelbaum, Octavio Garcia">
     <meta name="de que se trata" content="En la siguiente página se desarrolla una variante del videojuego Snake">
     <meta name="words" content="Snake, viborita, new">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNAKE</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="imagenes/viborita.png">
     <img id="ucc" src="imagenes/SIGLA_UCC.png" src="https://www.ucc.edu.ar/" alt=“Logo UCC”>
 </head>
 <body>
@@ -30,13 +32,9 @@
 </div>
 <img class="imgup" src="imagenes/serpentup.png" alt=“Serpiente principal por encima del botón, superior”>
 <img class="imgupd" src="imagenes/serpentupdown.png" alt=“Serpiente principal por encima del botón, inferior>
-<div class="izq">
-    <button type="button"></button>
-</div>
+<form action="canvas.html">
 <button class="frente"><a>SNAKE</a></button>
-<div class="der">
-    <button type="button"></button>
-</div>
+</form>
 
 <section class="ini" id="Inicio">
     <h2><a>La reinvencion misma del juego de la viborita</a></h2>
@@ -46,7 +44,7 @@
             </div>
             Este juego busca dar un cambio brusco al tan famoso juego de la viborita,
             el objetivo de este juego es concientizar, modificando la perspectiva jugabilistica
-            invirtiendo los roles protagónicos, convirtiendo al jugador en la presa, y a la maquina en el cazador
+            invirtiendo los roles protagonicos, convirtiendo al jugador en la presa, y a la maquina en el cazador
         </div>
     </div>
 </section>
@@ -57,9 +55,9 @@
         <div class="inner">
             <div class="line right">
             </div>
-            El jugador tendrá que realizar una serie de tareas en presencia de una víbora dormida, cuando esta se
+            El jugador tendra que realizar una serie de tareas en presencia de una vibora dormida, cuando esta se
             despierte
-            comenzara a seguir el cursor con la mirada, si la serpiente detecta el movimiento del jugador esta procederá
+            comenzara a seguir el cursor con la mirada, si la serpiente detecta el movimiento del jugador esta procedera
             a comer al jugador dando por finalizado el jugador.
         </div>
     </div>
@@ -76,8 +74,8 @@
 </section>
 </body>
 <footer>
-    <p class="end">Autores: </p>
-    <p><a class="end" href="https://github.com/UCC-LabCompu2/proyecto2021-angelone-apfelbaum-garcia">Benjamin Angelone
+    <p id="author">Autores: </p>
+    <p><a id="end" href="https://github.com/UCC-LabCompu2/proyecto2021-angelone-apfelbaum-garcia" target="_blank">Benjamin Angelone
         - Ana Paula Apfelbaum - Octavio Garcia</a></p>
 </footer>
 </html>

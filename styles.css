@@ -102,20 +102,6 @@ p{
     top: -30px;
     z-index: -2;
 }
-.izq button{   
-    color: rgb(180, 180, 180);  
-    font-size: 250px;
-    top: 357px;
-    left: 150px;
-    font-family: "Bebas Neue", Fantasy;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden; 
-    position: absolute;  
-        
-} 
 
 .frente:hover a {display:none}
 .frente:hover:before{content:"JUGAR"}
@@ -139,20 +125,7 @@ p{
            
 }
 
-.der button{   
-    color: rgb(180, 180, 180);  
-    font-size: 250px;
-    top: 357px;
-    left: 1570px;
-    font-family: "Bebas Neue", Fantasy;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden; 
-    position: absolute; 
-          
-}
+
 .ini h2{
     margin-top: 1080px;
 }
@@ -247,12 +220,12 @@ p{
 {
   padding: 30px;
 }
-footer{
-
+#end, #author{
+    font-size:15px;
     bottom: 0;
     background: transparent;
     height: 10px;
     font-family: 'Open Sans', sans-serif;
-    color: #FFFFFF;
-    padding: 20px;
+    color: rgba(255, 255, 255, 0.2);
 }
+
