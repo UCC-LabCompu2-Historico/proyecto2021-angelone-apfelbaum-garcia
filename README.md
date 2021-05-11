@@ -25,6 +25,6 @@ V0.1. En esta versión este proyecto todavía se encuentra en desarrollo, todav�
 
 ## Autores ✒️
 
-* ** Ana Paula Apfelbaum ** [anitaapfel06](https://github.com/anitaapfel06)
-* ** Benjamín Angelone ** [BenjAngelone](https://github.com/BenjAngelone)
-* ** Octavio Garcia ** [OctavioGarcia1337](https://github.com/OctavioGarcia1337)
+*  Ana Paula Apfelbaum  [anitaapfel06](https://github.com/anitaapfel06)
+*  Benjamín Angelone  [BenjAngelone](https://github.com/BenjAngelone)
+*  Octavio Garcia  [OctavioGarcia1337](https://github.com/OctavioGarcia1337)
