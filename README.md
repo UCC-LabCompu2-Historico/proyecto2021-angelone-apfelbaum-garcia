@@ -5,7 +5,7 @@ características o puntos a cumplir, nosotros tomamos la iniciativa de hacer una
 
 ## ¿Quieres echarle un vistazo? 👀
 
-Haz click **[Aquí](https://ucc-labcompu2.github.io/proyecto2021-angelone-apfelbaum-garcia/index.HTML)** para abrir la página tu mismo.
+Haz click **[Aquí](https://ucc-labcompu2.github.io/proyecto2021-angelone-apfelbaum-garcia/index.html)** para abrir la página tu mismo.
 
 Si no, de todas formas aquí te dejamos un pequeño adelanto...
 ![](https://github.com/UCC-LabCompu2/proyecto2021-angelone-apfelbaum-garcia/blob/main/previews/readme/home_page.png?raw=true)
