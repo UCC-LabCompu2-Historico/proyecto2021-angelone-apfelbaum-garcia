@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,6 +9,7 @@
     <title>SNAKE</title>
     <link rel="stylesheet" href="style_canvas.css">
     <link rel="shortcut icon" href="imagenes/viborita.png">
+    
 </head>
 <body>
 <header>
@@ -16,9 +18,28 @@
     </div>
 </header>
 
+
+        <button onClick="dificultad(0.25,4,2)" class=" dif" type="button"> Cirujano</button>
+        <button onClick="dificultad(0.5,8,3)" class=" med" type="button"> Nervios de Acero</button>
+        <button onClick="dificultad(1,13,1)"class=" fas" type="button"> Parkinson</button>
+
 <div class="fondo"></div>
-<canvas id="myCanvas" width="1616" height="903"></canvas>
+<canvas id="myCanvas" width="1616" height="903" name="one" type="text" value="Javascript example" ></canvas>
+<script type="text/javascript" src="gaame.js"></script>
 <img class="serpientebase" src="imagenes/game.png" alt="serpiente">
+
+<img id="parpado" src="imagenes/parpado.png" alt="nido">
+
+
+<img id="ojoi" src="imagenes/ojo  izq.png" alt="nido">
+<img id="ojod" src="imagenes/ojo  der.png" alt="nido">
+<img id="lengua" src="imagenes/lengua.png" alt="nido">
+<img id="huevor" src="imagenes/huevo roto.png" alt="nido">
+<img class="huevo" id="drag-items" draggable="true" src="imagenes/huevo 1.png" alt="nido">
+<img class="huevo" id="drag-items2" draggable="true" src="imagenes/huevo2.png" alt="nido">
+<img class="huevo" id="drag-items3" draggable="true" src="imagenes/huevo 3.png" alt="nido">
+
+
 </body>
 
 </html>
