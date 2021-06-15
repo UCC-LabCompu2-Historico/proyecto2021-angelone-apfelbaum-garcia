@@ -18,10 +18,14 @@ Si no, de todas formas aquí te dejamos un pequeño adelanto...
 
 * HTML
 * CSS
+* JavaScript
 
 ## Versionado 📌
 
 V0.1. En esta versión este proyecto todavía se encuentra en desarrollo, todavía no contiene el minijuego, simplemente es la estructura de la página web.
+
+V0.2. El proyecto aún no ha sido finalizado, aunque en esta versión nuestra página web ya posee un minijuego funcional de la viborita, una versión muy distinta a la 
+      clásica viborita que todos conocemos... pero, en fin, no deja de ser un buen minijuego para pasar el rato.
 
 ## Autores ✒️
 
