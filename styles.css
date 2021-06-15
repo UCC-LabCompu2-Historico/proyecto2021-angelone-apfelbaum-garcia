@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-    
+
     color: rgb(180, 180, 180);
     text-transform: uppercase;
     text-align: center;
@@ -25,7 +25,7 @@ h1 {
 }
 
 header a {
-    font-family: "Audiowide", Fantasy;
+    font-family: "BebasNeueRegular", Fantasy;
     color: rgb(134, 134, 134);
     text-decoration: none;
     padding: 0 0.5rem;
@@ -43,7 +43,7 @@ nav {
 }
 
 header li {
-    font-family: "Audiowide", Fantasy;
+    font-family: "BebasNeueRegular", Fantasy;
     display: inline;
     margin-top: 10px;
     margin-right: 100px;
@@ -52,7 +52,7 @@ header li {
 }
 
 h2 {
-    font-family: "Audiowide", Fantasy;
+    font-family: "BebasNeueRegular", Fantasy;
     color: rgb(180, 180, 180);
     padding: 1px;
     text-align: center;
@@ -62,7 +62,7 @@ h2 {
 }
 
 h2 {
-    font-family: "Audiowide", Fantasy;
+    font-family: "BebasNeueRegular", Fantasy;
     color: rgb(180, 180, 180);
     padding: 100px;
     text-transform: uppercase;
@@ -77,7 +77,7 @@ h2 {
 }
 
 p {
-    font-family: "Audiowide", sans-serif;
+    font-family: "BebasNeueRegular", sans-serif;
     color: rgb(54, 54, 54);
     font-size: 30px;
 }
@@ -125,8 +125,6 @@ p {
 }
 
 
-
-
 .ini h2 {
     margin-top: 1080px;
 }
@@ -156,7 +154,7 @@ p {
     top: 337px;
     position: absolute;
     left: 560px;
-    font-family: "Audiowide", Fantasy;
+    font-family: "BebasNeueRegular", Fantasy;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
