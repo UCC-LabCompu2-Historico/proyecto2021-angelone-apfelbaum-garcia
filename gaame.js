@@ -14,12 +14,18 @@ var margenvel = 13;
 var colorhuevo = "drag-items";
 var siguiendo = false;
 
+ctx.font = "130px impact";
+ctx.fillStyle = "white";
+ctx.fillText("Click para comenzar!", 250, 500);
+
+
+
 /**
  * Setea la dificultad del juego.
  * @method dificultad
- * @param {number} tim - Setea el tiempo limite que tiene el jugador para reaccionar y quedarse quieto.
- * @param {number} vel - Limita la velocidad a la que el jugador puede mover el huevo.
- * @param {number} col - Setea el color del huevo según la dificultad.
+ * @param {var} tim - Setea el tiempo limite que tiene el jugador para reaccionar y quedarse quieto.
+ * @param {var} vel - Limita la velocidad a la que el jugador puede mover el huevo.
+ * @param {var} col - Setea el color del huevo según la dificultad.
  */
 function dificultad(tim, vel, col) {                    //se setea la dificultad del juego
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -43,10 +49,6 @@ function dificultad(tim, vel, col) {                    //se setea la dificultad
     }
 
 }
-
-ctx.font = "130px impact";
-ctx.fillStyle = "white";
-ctx.fillText("Click para comenzar!", 250, 500);
 
 /**
  * Muestra los puntos obtenidos en pantalla.
@@ -85,10 +87,10 @@ canvas.onmousedown = function (e) {                        //Detecta cuando se c
     }
 }
 
-canvas.onmouseup = function (e) {                     //se detecta cuando se suelta el clikc
+canvas.onmouseup = function (e) {                     //se detecta cuando se suelta el click
     vidahuevo = 100;
 
-    var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
+    var cRect = canvas.getBoundingClientRect();            // Gets CSS pos, and width/height
     var soltadoX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas
     var soltadoY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make
     if (soltadoX >= 1140 && soltadoY < 600 && soltadoX <= 1380 && soltadoY > 400 && siguiendo && muerto == false) {   // verifica si se solto en el tronco para sumar puntos
@@ -124,9 +126,9 @@ canvas.onmouseup = function (e) {                     //se detecta cuando se sue
  * @method seguir
  * */
 function seguir(e) {                                        // Esta funcion sigue el cursor
-    var cRect = canvas.getBoundingClientRect();            // Gets CSS pos, and width/height
-    var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas
-    var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make
+    var cRect = canvas.getBoundingClientRect();             // Gets CSS pos, and width/height
+    var canvasX = Math.round(e.clientX - cRect.left);    // Subtract the 'left' of the canvas
+    var canvasY = Math.round(e.clientY - cRect.top);     // from the X/Y positions to make
 
     ctx.clearRect(0, 300, canvas.width, 900);
 
@@ -194,9 +196,9 @@ function muerte() {                     // se carga la death cam
 /**
  * Realiza las animaciones de sospecha (se mueve el ojo y la lengua ).
  * @method sospecha
- * @param {number} x - posicion del cursor en x.
- * @param {number} y - posicion del cursor en y.
- * @param {number} t - tiempo de ejecución.
+ * @param {var} x - posicion del cursor en x.
+ * @param {var} y - posicion del cursor en y.
+ * @param {var} t - tiempo de ejecución.
  * @param {Boolean} check - Detecta si hay movimiento en el cursor.
  */
 function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el ojo y la lengua )
@@ -241,7 +243,7 @@ function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el
 /**
  * Esta función carga la animación de los ojos según la posición del cursor.
  * @method animacionojos
- * @param {number} x - Posición del cursor en x
+ * @param {var} x - Posición del cursor en x
  */
 function animacionojos(x) {          // se carga la imagen del ojo  dependiendo la posicion del cursor
     if (x > 777) {
