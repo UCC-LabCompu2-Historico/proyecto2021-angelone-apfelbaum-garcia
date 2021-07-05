@@ -1,24 +1,21 @@
+localStorage.setItem("margenvel", 13);
+localStorage.setItem("timewhait2", 3);
+localStorage.setItem("timewhait", 1);
+localStorage.setItem("colorhuevo", "drag-items");
+//localStorage.setItem("siguiendo", false);
+
+
+saludo("Parkinson");
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-
-var oldx = 0;
-var oldy = 0;
-var vidahuevo;
-var puntos = 0;
-var muerto;
-var sos = 0;
-var tt = 0;
-var timewhait = 1;
-var timewhait2 = 3;
-var margenvel = 13;
-var colorhuevo = "drag-items";
-var siguiendo = false;
-
-ctx.font = "130px impact";
-ctx.fillStyle = "white";
-ctx.fillText("Click para comenzar!", 250, 500);
-
-
+function saludo(dific){ 
+    localStorage.setItem("muerto",true);
+    (document.getElementById("myCanvas").getContext("2d")).font = "130px impact";
+    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
+    (document.getElementById("myCanvas").getContext("2d")).fillText("Click para comenzar!", 250, 500);
+    (document.getElementById("myCanvas").getContext("2d")).font = "60px impact";
+    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
+    (document.getElementById("myCanvas").getContext("2d")).fillText("Dificultad: "+dific, 550, 600);}
 
 /**
  * Setea la dificultad del juego.
@@ -28,23 +25,25 @@ ctx.fillText("Click para comenzar!", 250, 500);
  * @param {var} col - Setea el color del huevo según la dificultad.
  */
 function dificultad(tim, vel, col) {                    //se setea la dificultad del juego
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "130px impact";
-    ctx.fillStyle = "white";
-    ctx.fillText("Click para comenzar!", 250, 500);
-    puntos = 0;
-    timewhait = tim;
-    timewhait2 = timewhait + 3;
-    margenvel = vel;
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
+    
+    localStorage.setItem("puntos", 0);
+    localStorage.setItem("margenvel", vel);
+    localStorage.setItem("timewhait2", tim+3);
+    localStorage.setItem("timewhait", tim);
+    
     switch (col) {
         case 1:
-            colorhuevo = "drag-items";
+            saludo("Parkinson");
+            localStorage.setItem("colorhuevo", "drag-items");
             break;
         case 2:
-            colorhuevo = "drag-items2";
+            saludo("Nervios de Acero");
+            localStorage.setItem("colorhuevo", "drag-items2");
             break;
         case 3:
-            colorhuevo = "drag-items3";
+            saludo("Crujano");
+            localStorage.setItem("colorhuevo", "drag-items3");
             break;
     }
 
@@ -55,65 +54,95 @@ function dificultad(tim, vel, col) {                    //se setea la dificultad
  * @method mostrar_puntos
  */
 function mostrar_puntos() {                          //Muestra los Puntos
-    ctx.clearRect(0, 0, canvas.width, 70);
-    var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(200, 0, canvas.width, 70);
+    var gradient = (document.getElementById("myCanvas").getContext("2d")).createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop("1.0", "white");
-    ctx.strokeStyle = gradient;
-    ctx.font = "60px Impact";
-    ctx.fillStyle = "white";
-    ctx.strokeText("Puntos : " + puntos, 600, 70);
+    (document.getElementById("myCanvas").getContext("2d")).strokeStyle = gradient;
+    (document.getElementById("myCanvas").getContext("2d")).font = "60px Impact";
+    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
+    (document.getElementById("myCanvas").getContext("2d")).strokeText("Puntos : " + localStorage.getItem("puntos"), 600, 70);
 }
 
+async function mostrar_tiempo() {                          //Muestra el tiempo
+    if (localStorage.getItem("muerto")=="true"){
+        localStorage.setItem("start", seconds = new Date().getTime() / 1000);
+    }
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, 200, 70);
+    var gradient = (document.getElementById("myCanvas").getContext("2d")).createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop("1.0", "white");
+    (document.getElementById("myCanvas").getContext("2d")).strokeStyle = gradient;
+    (document.getElementById("myCanvas").getContext("2d")).font = "25px Impact";
+    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
+    var tiempo= parseInt(localStorage.getItem("segundos"));
+    if (localStorage.getItem("muerto")!="true"){
+    
+    localStorage.setItem("segundos", (seconds = new Date().getTime() / 1000)-localStorage.getItem("start"));
+    }
+    var final=Math.floor(tiempo%60)
+    if (final<10){
+        final="0"+final
+    }
+    
+    (document.getElementById("myCanvas").getContext("2d")).strokeText(Math.floor(tiempo/60)+":" + final, 10, 30);
+}
+mostrar_tiempo();
 canvas.onmousedown = function (e) {                        //Detecta cuando se clickea
-    vidahuevo = 100;
-    muerto = false;
+    var intervalID = window.setInterval(mostrar_tiempo, 1000);
+    localStorage.setItem("vidahuevo",100);
+    if (localStorage.getItem("muerto")=="true"){
+        localStorage.setItem("muerto",false);
+    }
+    
+     
     var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
     var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
     var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
-    ctx.clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
-    var img = document.getElementById(colorhuevo);
-    ctx.drawImage(img, 105, 670, 90, 90)
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
+    var img = document.getElementById(localStorage.getItem("colorhuevo"));
+    (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
     var parpado = document.getElementById("parpado");
-    ctx.drawImage(parpado, 426, -100);
-    var img = document.getElementById(colorhuevo);
-    ctx.drawImage(img, 105, 670, 90, 90)
+    (document.getElementById("myCanvas").getContext("2d")).drawImage(parpado, 426, -100);
+    var img = document.getElementById(localStorage.getItem("colorhuevo"));
+    (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
 
     mostrar_puntos();
     if (canvasX >= 80 && canvasY < 760 && canvasX <= 180 && canvasY > 590) {  // verifica si se clickea en el nido para obtener el huevo!
-        oldx = canvasX;
-        oldy = canvasY;
+        localStorage.setItem("oldx",canvasX);
+        localStorage.setItem("oldy",canvasY);
         siguiendo = true;
         canvas.addEventListener("mousemove", seguir);
     }
 }
 
 canvas.onmouseup = function (e) {                     //se detecta cuando se suelta el click
-    vidahuevo = 100;
+    var intervalID = window.setInterval(mostrar_tiempo, 1000);
+    localStorage.setItem("vidahuevo", 100);
 
     var cRect = canvas.getBoundingClientRect();            // Gets CSS pos, and width/height
     var soltadoX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas
     var soltadoY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make
-    if (soltadoX >= 1140 && soltadoY < 600 && soltadoX <= 1380 && soltadoY > 400 && siguiendo && muerto == false) {   // verifica si se solto en el tronco para sumar puntos
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var img = document.getElementById(colorhuevo);
-        ctx.drawImage(img, 105, 670, 90, 90)
-        puntos = puntos + 1;
+    if (soltadoX >= 1140 && soltadoY < 600 && soltadoX <= 1380 && soltadoY > 400 && siguiendo && localStorage.getItem("muerto") == "false") {   // verifica si se solto en el tronco para sumar puntos
+        (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
+        var img = document.getElementById(localStorage.getItem("colorhuevo"));
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
+        localStorage.setItem("puntos",parseInt(localStorage.getItem("puntos"))+1);
 
         var parpado = document.getElementById("parpado");
-        ctx.drawImage(parpado, 426, -100)
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(parpado, 426, -100);
 
         mostrar_puntos();
     } else {
-        if (muerto != true) {
+        if (localStorage.getItem("muerto") != "true") {
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            var img = document.getElementById(colorhuevo);
-            ctx.drawImage(img, 105, 670, 90, 90)
+            (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
+            var img = document.getElementById(localStorage.getItem("colorhuevo"));
+            (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
             var parpado = document.getElementById("parpado");
-            ctx.drawImage(parpado, 426, -100)
+            (document.getElementById("myCanvas").getContext("2d")).drawImage(parpado, 426, -100);
         } else {
+            
+            localStorage.setItem("puntos", 0);
 
-            puntos = 0;
         }
     }
     siguiendo = false;
@@ -125,15 +154,19 @@ canvas.onmouseup = function (e) {                     //se detecta cuando se sue
 /** Esta funcion se encarga de graficar el huevo arrastrandose y detectar la velocidad del jugador, para luego restarle vida al huevo.
  * @method seguir
  * */
-function seguir(e) {                                        // Esta funcion sigue el cursor
+function seguir(e) { // Esta funcion sigue el cursor
+    var intervalID = window.setInterval(mostrar_tiempo, 1000);
+    oldx =parseInt(localStorage.getItem("oldx"));
+    oldy =parseInt(localStorage.getItem("oldy"));
+               
     var cRect = canvas.getBoundingClientRect();             // Gets CSS pos, and width/height
     var canvasX = Math.round(e.clientX - cRect.left);    // Subtract the 'left' of the canvas
     var canvasY = Math.round(e.clientY - cRect.top);     // from the X/Y positions to make
 
-    ctx.clearRect(0, 300, canvas.width, 900);
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 300, canvas.width, 900);
 
-    var img = document.getElementById(colorhuevo);
-    ctx.drawImage(img, canvasX, canvasY, 90, 90)
+    var img = document.getElementById(localStorage.getItem("colorhuevo"));
+    (document.getElementById("myCanvas").getContext("2d")).drawImage(img, canvasX, canvasY, 90, 90);
 
 
     var seconds = new Date().getTime() / 1000;
@@ -143,36 +176,35 @@ function seguir(e) {                                        // Esta funcion sigu
     } else {
         var check = false;
     }
-    ctx.clearRect(0, 0, canvas.width, 300);
+    (document.getElementById("myCanvas").getContext("2d")).clearRect(200, 0, canvas.width, 300);
 
     sospecha(canvasX, canvasY, seconds, check);       //se llama a la funcion sospecha enviando la posicion del cursor y el tiempo transcurrido, junto a una verificacion de movimiento
     mostrar_puntos();
-
-    if (oldx - canvasX > margenvel) vidahuevo = vidahuevo - oldx - canvasX;   // obtiene la velocidad de movimiento y en vase a eso resta vida al huevo
-    if (oldx - canvasX < -margenvel) vidahuevo = vidahuevo + oldx - canvasX;
-    if (oldy - canvasY > margenvel) vidahuevo = vidahuevo - oldy - canvasY;
-    if (oldy - canvasY < -margenvel) vidahuevo = vidahuevo + oldy - canvasY;
+    if (oldx - canvasX > parseInt(localStorage.getItem("margenvel"))) localStorage.setItem("vidahuevo", parseInt(localStorage.getItem("vidahuevo"))-oldx- canvasX);   // obtiene la velocidad de movimiento y en vase a eso resta vida al huevo
+    if (oldx - canvasX < -parseInt(localStorage.getItem("margenvel"))) localStorage.setItem("vidahuevo", parseInt(localStorage.getItem("vidahuevo"))+oldx- canvasX);
+    if (oldy - canvasY > parseInt(localStorage.getItem("margenvel"))) vidahuevo = localStorage.setItem("vidahuevo", parseInt(localStorage.getItem("vidahuevo"))-oldy- canvasY);
+    if (oldy - canvasY < -parseInt(localStorage.getItem("margenvel"))) vidahuevo = localStorage.setItem("vidahuevo", parseInt(localStorage.getItem("vidahuevo"))+oldy- canvasY);
     if (canvasY < 370) {
         canvas.removeEventListener("mousemove", seguir);
         muerte();
     }
-    if (vidahuevo < 0) {
+    if (localStorage.getItem("vidahuevo") < 0) {
 
         canvas.removeEventListener("mousemove", seguir);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var img = document.getElementById(colorhuevo);
-        ctx.drawImage(img, 105, 670, 90, 90)
+        (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
+        var img = document.getElementById(localStorage.getItem("colorhuevo"));
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
         var brok = document.getElementById("huevor");
-        ctx.drawImage(brok, canvasX, canvasY, 90, 90);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(brok, canvasX, canvasY, 90, 90);
 
-        ctx.clearRect(0, 0, canvas.width, 300);
+        (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
         muerte()
 
 
     }
-    oldx = canvasX;
-    oldy = canvasY;
-
+    localStorage.setItem("oldx",canvasX);
+    localStorage.setItem("oldy",canvasY);
+   
 
 };
 
@@ -181,16 +213,14 @@ function seguir(e) {                                        // Esta funcion sigu
  * @method muerte
  */
 function muerte() {                     // se carga la death cam
-
     mostrar_puntos();
     var img2 = new Image();
     img2.src = "imagenes/death.png";
     img2.onload = function () {
-        ctx.drawImage(img2, 0, 0);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(img2, 0, 0);
     }
-
-
-    muerto = true;
+    localStorage.setItem("muerto",true);
+   
 }
 
 /**
@@ -201,41 +231,45 @@ function muerte() {                     // se carga la death cam
  * @param {var} t - tiempo de ejecución.
  * @param {Boolean} check - Detecta si hay movimiento en el cursor.
  */
+
+localStorage.setItem("sos",0);
+localStorage.setItem("tt",0);
 function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el ojo y la lengua )
+    
     var otro = 4;
     if (Math.round(t % 12) == 0) {          //se activa la sospecha y realiza la animacion
-        tt = t;
+        localStorage.setItem("tt",t); 
         animacionojos(x);
-        sos += 1;
+        localStorage.setItem("sos",parseInt(localStorage.getItem("sos"))+1);
     }
 
 
-    if (sos > 0) {
-        if (t - tt >= timewhait) {            //le da un tiempo de reaccion al usuario
-            if (t - tt < timewhait2) {            //se abre el ojo de la serpiente  y verifica que no te muevas
+    if (parseInt(localStorage.getItem("sos")) > 0) {
+        if (t - parseInt(localStorage.getItem("tt"))>= parseInt(localStorage.getItem("timewhait"))) {            //le da un tiempo de reaccion al usuario
+            if (t - parseInt(localStorage.getItem("tt")) < parseInt(localStorage.getItem("timewhait2"))) {            //se abre el ojo de la serpiente  y verifica que no te muevas
 
                 otro = 0;
 
-                ctx.clearRect(0, 0, canvas.width, 300);
+                (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
                 animacionojos(x);
 
                 if (check) {
-                    tt = 0;
+                    localStorage.setItem("tt",0);
 
                     canvas.removeEventListener("mousemove", seguir);
                     muerte();
                 }
             } else {
-                ctx.clearRect(0, 0, canvas.width, 300);
-                sos = 0;
+                (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
+                localStorage.setItem("sos",0);
             }
         }
     }
     if (otro == 4) {
         var parpado = document.getElementById("parpado");
-        ctx.drawImage(parpado, 426, -100);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(parpado, 426, -100);
     } else {
-        ctx.clearRect(0, 0, canvas.width, 300);
+        (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
         animacionojos(x, y);
     }
 }
@@ -249,16 +283,17 @@ function animacionojos(x) {          // se carga la imagen del ojo  dependiendo 
     if (x > 777) {
 
         var ojod = document.getElementById("ojod");
-        ctx.drawImage(ojod, 426, -100);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(ojod, 426, -100);
     } else {
 
         var ojoi = document.getElementById("ojoi");
-        ctx.drawImage(ojoi, 426, -100);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(ojoi, 426, -100);
 
     }
     if (x % 4 == 0) {
         var lengua = document.getElementById("lengua");
-        ctx.drawImage(lengua, 446, -115);
+        (document.getElementById("myCanvas").getContext("2d")).drawImage(lengua, 446, -115);
     }
 }
+    
     
