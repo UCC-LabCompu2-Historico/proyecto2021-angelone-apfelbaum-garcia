@@ -2,32 +2,17 @@ localStorage.setItem("margenvel", 13);
 localStorage.setItem("timewhait2", 3);
 localStorage.setItem("timewhait", 1);
 localStorage.setItem("colorhuevo", "drag-items");
-<<<<<<< HEAD
 localStorage.setItem("puntos", 0);
 localStorage.setItem("muerto",true);
 //localStorage.setItem("siguiendo", false);
 
 
-=======
-//localStorage.setItem("siguiendo", false);
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 
 saludo("Parkinson");
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-saludo("Parkinson");
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-function saludo(dific){ 
-    localStorage.setItem("muerto",true);
-    (document.getElementById("myCanvas").getContext("2d")).font = "130px impact";
-    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
-    (document.getElementById("myCanvas").getContext("2d")).fillText("Click para comenzar!", 250, 500);
-    (document.getElementById("myCanvas").getContext("2d")).font = "60px impact";
-    (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
-    (document.getElementById("myCanvas").getContext("2d")).fillText("Dificultad: "+dific, 550, 600);}
 
 /**
  * Pantalla de saludo inicial. Se encarga de cargar el mensaje de bienvenida al entrar a la pagina.
@@ -68,20 +53,12 @@ function dificultad(tim, vel, col) {                    //se setea la dificultad
             localStorage.setItem("colorhuevo", "drag-items");
             break;
         case 2:
-<<<<<<< HEAD
             saludo("Cirujano");
             localStorage.setItem("colorhuevo", "drag-items2");
             break;
         case 3:
             saludo("Nervios de Acero");
             
-=======
-            saludo("Nervios de Acero");
-            localStorage.setItem("colorhuevo", "drag-items2");
-            break;
-        case 3:
-            saludo("Crujano");
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
             localStorage.setItem("colorhuevo", "drag-items3");
             break;
     }
@@ -102,7 +79,6 @@ function mostrar_puntos() {                          //Muestra los Puntos
     (document.getElementById("myCanvas").getContext("2d")).strokeText("Puntos : " + localStorage.getItem("puntos"), 600, 70);
 }
 
-<<<<<<< HEAD
 
 
 
@@ -110,8 +86,6 @@ function mostrar_puntos() {                          //Muestra los Puntos
  * Temporizador de juego. Cuenta el tiempo que se lleva jugando esa ronda.
  * @method mostrar_tiempo
  */
-=======
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 async function mostrar_tiempo() {                          //Muestra el tiempo
     if (localStorage.getItem("muerto")=="true"){
         localStorage.setItem("start", seconds = new Date().getTime() / 1000);
@@ -123,13 +97,10 @@ async function mostrar_tiempo() {                          //Muestra el tiempo
     (document.getElementById("myCanvas").getContext("2d")).font = "25px Impact";
     (document.getElementById("myCanvas").getContext("2d")).fillStyle = "white";
     var tiempo= parseInt(localStorage.getItem("segundos"));
-<<<<<<< HEAD
     var img = new Image();
     img.src = "imagenes/exit.png";
     (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 0, 35,70,70);
 
-=======
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
     if (localStorage.getItem("muerto")!="true"){
     
     localStorage.setItem("segundos", (seconds = new Date().getTime() / 1000)-localStorage.getItem("start"));
@@ -142,11 +113,8 @@ async function mostrar_tiempo() {                          //Muestra el tiempo
     (document.getElementById("myCanvas").getContext("2d")).strokeText(Math.floor(tiempo/60)+":" + final, 10, 30);
 }
 mostrar_tiempo();
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 canvas.onmousedown = function (e) {                        //Detecta cuando se clickea
     var intervalID = window.setInterval(mostrar_tiempo, 1000);
     localStorage.setItem("vidahuevo",100);
@@ -179,12 +147,6 @@ canvas.onmousedown = function (e) {                        //Detecta cuando se c
     }
 }
 
-<<<<<<< HEAD
-=======
-canvas.onmouseup = function (e) {                     //se detecta cuando se suelta el click
-    var intervalID = window.setInterval(mostrar_tiempo, 1000);
-    localStorage.setItem("vidahuevo", 100);
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 
 canvas.onmouseup = function (e) {                       //se detecta cuando se suelta el click
     var intervalID = window.setInterval(mostrar_tiempo, 1000);
@@ -193,11 +155,7 @@ canvas.onmouseup = function (e) {                       //se detecta cuando se s
     var cRect = canvas.getBoundingClientRect();         // Gets CSS pos, and width/height
     var soltadoX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas
     var soltadoY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make
-<<<<<<< HEAD
     if (soltadoX >= 1140 && soltadoY < 600 && soltadoX <= 1380 && soltadoY > 400 && siguiendo && localStorage.getItem("muerto") == "false") {                                // verifica si se solto en el tronco para sumar puntos
-=======
-    if (soltadoX >= 1140 && soltadoY < 600 && soltadoX <= 1380 && soltadoY > 400 && siguiendo && localStorage.getItem("muerto") == "false") {   // verifica si se solto en el tronco para sumar puntos
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
         (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
         var img = document.getElementById(localStorage.getItem("colorhuevo"));
         (document.getElementById("myCanvas").getContext("2d")).drawImage(img, 105, 670, 90, 90);
@@ -208,11 +166,7 @@ canvas.onmouseup = function (e) {                       //se detecta cuando se s
 
         mostrar_puntos();
     } else {
-<<<<<<< HEAD
         if (localStorage.getItem("muerto") != "true") { // al soltar el huevo en una posicion que no es la indicada vuelve aa la base
-=======
-        if (localStorage.getItem("muerto") != "true") {
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 
             (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, canvas.height);
             var img = document.getElementById(localStorage.getItem("colorhuevo"));
@@ -286,11 +240,7 @@ function seguir(e) { // Esta funcion sigue el cursor
     localStorage.setItem("oldy",canvasY);
    
 
-<<<<<<< HEAD
 }
-=======
-};
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
 
 /**
  * Esta funcion carga una imagen a modo de  death-cam o pantalla de muerte.
@@ -316,9 +266,6 @@ localStorage.setItem("tt",0);
  * @param {var} t - tiempo de ejecución.
  * @param {Boolean} check - Detecta si hay movimiento en el cursor.
  */
-
-localStorage.setItem("sos",0);
-localStorage.setItem("tt",0);
 function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el ojo y la lengua )
     
     var otro = 4;
@@ -355,11 +302,7 @@ function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el
         (document.getElementById("myCanvas").getContext("2d")).drawImage(parpado, 426, -100);
     } else {
         (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
-<<<<<<< HEAD
         animacionojos(x);
-=======
-        animacionojos(x, y);
->>>>>>> e6fbd49cd17e4c0eba794eaeb72850129a12a3e4
     }
 }
 
