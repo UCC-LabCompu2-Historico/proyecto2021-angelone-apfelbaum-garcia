@@ -12,7 +12,7 @@ html, body {
     line-height: 200px;
     white-space: nowrap;
     text-align: center;
-    
+
 }
 
 h1 {
@@ -29,7 +29,6 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 
 .fondo {
@@ -78,7 +77,7 @@ button {
 
     background-image: url("imagenes/fodnos.png");
     background-size: cover;
-    
+
 
 }
 
