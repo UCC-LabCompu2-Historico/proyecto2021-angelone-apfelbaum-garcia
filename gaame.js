@@ -277,13 +277,10 @@ function sospecha(x, y, t, check) {      // animaciones de sospecha (se mueve el
 
 
     if (parseInt(localStorage.getItem("sos")) > 0) {
-        console.log("entre1"+ " PARSE: " + (t - parseInt(localStorage.getItem("tt"))) + "TIME: " + (parseInt(localStorage.getItem("timewhait"))));
         if (t - parseInt(localStorage.getItem("tt")) >= parseInt(localStorage.getItem("timewhait"))) {            //le da un tiempo de reaccion al usuario
-            console.log("entre2");
             if (t - parseInt(localStorage.getItem("tt")) < parseInt(localStorage.getItem("timewhait2"))) {            //se abre el ojo de la serpiente  y verifica que no te muevas
 
                 otro = 0;
-                console.log("entre3");
                 (document.getElementById("myCanvas").getContext("2d")).clearRect(0, 0, canvas.width, 300);
                 animacionojos(x);
 
