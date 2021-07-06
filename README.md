@@ -26,7 +26,10 @@ V0.1. En esta versión este proyecto todavía se encuentra en desarrollo, todav�
 
 V0.2. El proyecto aún no ha sido finalizado, aunque en esta versión nuestra página web ya posee un minijuego funcional de la viborita, programado en JavaScript,
       una versión muy distinta a la clásica viborita que todos conocemos... pero, en fin, no deja de ser un buen minijuego para pasar el rato.
-
+      
+V0.3. Se solucionan diversos errores del juego, se implementa un cursor personalizado, un temporizador y el cambio de dificultad debajo de la pantalla del juego
+      acompañado de un cambio de color del huevo.
+      
 ## Autores ✒️
 
 *  Ana Paula Apfelbaum  [anitaapfel06](https://github.com/anitaapfel06)
